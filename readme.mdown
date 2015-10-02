@@ -1,0 +1,12 @@
+# Unfav
+
+A Ruby script that listens for favs of a given tweet. The idea is to improve upon the common, comically-biased Twitter trend of giving polls as "RT for A, Fav for B". Since retweets (RTs) propagate the poll, the tweet goes to more friends of people who vote for A. 
+
+This script uses favs for one half of the poll, but rather than use retweets for the other half, it listens for user who have fav'd the given poll tweet and then unfav'd it. For example: 
+
+<blockquote class="twitter-tweet" data-cards="hidden" lang="en"><p lang="en" dir="ltr">Fav for Taylor&#10;&#10;Fav then unfav for CRJ&#10;&#10;(testing this: <a href="https://t.co/crXQWwWqTt">https://t.co/crXQWwWqTt</a>)</p>&mdash; Schlink Bot (@schlinkbot) <a href="https://twitter.com/schlinkbot/status/649755468001357824">October 2, 2015</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+Since unfavs don't propagate tweets at nearly the scale that retweets do, it's a more fair poll. 
+
+At the end we can subtract `users who have fav'd` from the end `favorite_count` to get the unfav count. 
